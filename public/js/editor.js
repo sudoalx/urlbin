@@ -4,8 +4,6 @@
 
 api = apiVersions[LATEST_API_VERSION]
 
-
-
 /***
  * Helper functions
  ***/
@@ -14,7 +12,7 @@ api = apiVersions[LATEST_API_VERSION]
 function getBin(data) {
   // Generate an HTML page from the contents of each <textarea>
   var pageData =
-`${data["code"]}`;
+    `${data["code"]}`;
 
   return pageData;
 }
@@ -23,38 +21,33 @@ function getBin(data) {
 /***
  * Button press functions
  ***/
-
-
 /* Set the TinyUrl form hidden 'url' field to the view URL */
 function setViewUrl() {
   var data = {
-    "code" : document.getElementById("new-code").value
+    "code": document.getElementById("new-code").value
   };
 
   var binText = getBin(data);
 
-	// Update the URL for the "Short Link" button
+  // Update the URL for the "Short Link" button
   document.getElementById("url").value = api.getViewLink(binText);
 }
-
 
 /* Set the TinyUrl form hidden 'url' field to the code URL */
 function setCodeUrl() {
   document.getElementById("url").value = window.location.href;
 }
 
-
 /* Show a prompt with the HTML page data so the user can copy the code */
 function showCopyCodePrompt() {
   var data = {
-    "code" : document.getElementById("new-code").value
+    "code": document.getElementById("new-code").value
   };
 
   var binText = getBin(data);
 
   window.prompt("Copy to clipboard: ", binText)
 }
-
 
 /* Hide and show buttons based on checkbox state */
 function hideButtons(box) {
@@ -65,8 +58,6 @@ function hideButtons(box) {
     buttons.forEach((button) => button.style.display = "block");
   }
 }
-
-
 
 /***
  * Main procedure functions
@@ -89,7 +80,7 @@ function initialize() {
 /* Run each time a key is pressed on a text box */
 function update() {
   var data = {
-    "code" : document.getElementById("new-code").value
+    "code": document.getElementById("new-code").value
   };
   console.log(data)
 
