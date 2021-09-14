@@ -1,0 +1,30 @@
+<noscript>JavaScript is required to convert the URL into a usable web page.</noscript>
+<script type="text/javascript" src="/js/b64.js"></script>
+<script type="text/javascript" src="/js/api.js"></script>
+<script type="text/javascript">
+  function htmlDecode(input) {
+    var doc = new DOMParser().parseFromString(input, "text/html");
+    return doc.documentElement.textContent;
+  }
+  if (window.location.hash) {
+    // Try to get page data from the URL if possible
+    var hash = window.location.hash.slice(1);
+    var data = b64.decode(hash);
+    var urlDataObject = JSON.parse(data).code
+    try {
+      var api = apiVersions[urlDataObject.version];
+      var display = document.getElementById('code-display')
+      display.innerHTML = urlDataObject
+      // add line numbers
+      for (let i = 1; i <= urlDataObject.split("\n").length; i++) {
+        var numbers = '<div>' + i + '<div>'
+          document.getElementById('numbers').innerHTML += numbers
+      }
+    } catch (err) {
+      console.log("error while getting data")
+    }
+  } else {
+    // Otherwise redirect to the editor
+    window.location.replace("/about");
+  }
+</script>

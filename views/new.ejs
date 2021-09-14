@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New: UrlBin</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/3.0.20/autosize.min.js"></script>
+    <script src="/js/script.js"></script>
+    <link rel="shortcut icon" href="/icons/favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <script type="text/javascript" src="/js/b64.js"></script>
+    <script type="text/javascript" src="/js/api.js"></script>
+    <script src="/js/editor.js"></script>
+</head>
+
+<body>
+    <form action="">
+        <div class="wrapper">
+            <div class="line-numbers">
+                &gt;
+            </div>
+            <textarea onkeyup="update()" id="new-code" name="value"><%= locals.pageData %></textarea>
+        </div>
+        <input type="hidden" name="url" id="url" />
+    </form>
+    <%- include ("_buttons.ejs") %>
+        <script>
+            autosize(document.querySelectorAll('textarea'));
+        </script>
+</body>
+
+</html>

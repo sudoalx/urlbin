@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrlBin</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="/js/script.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/base16/solarized-dark.min.css"/>
+    <link rel="shortcut icon" href="/icons/favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/3.0.20/autosize.min.js"></script>
+</head>
+
+<body>
+    <%- include ("_buttons.ejs") %>
+    <div class="wrapper">
+        <script>
+            
+        </script>
+        <div class="line-numbers" id="numbers">
+            
+        </div>
+        <pre><code id="code-display">
+        </code></pre>
+        <%- include ("_decoded-url.ejs") %> 
+    </div>
+    
+</body>
+
+</html>
