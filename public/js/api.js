@@ -26,10 +26,10 @@ apiVersions["0.2.0"] = {
 
   /* Return a link to view the page */
   getViewLink: function (pageData) {
-    var urlData = pageData  ;
+    var urlData = pageData;
 
     const hashObject = b64.encode(JSON.stringify(urlData));
-    return `http://` + window.location.hostname + ((location.port != '')? ":" + location.port : "") + `/#${hashObject}`;
+    return window.location.protocol + window.location.hostname + ((location.port != '')? ":" + location.port : "") + `/#${hashObject}`;
   },
 
   /* Return the page data from the object */
