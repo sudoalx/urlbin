@@ -82,16 +82,11 @@ function update() {
   var data = {
     "code": document.getElementById("new-code").value
   };
-  console.log(data)
 
   var binText = getBin(data);
 
   // Save encoded page data to the URL
   window.location.hash = "#" + b64.encode(JSON.stringify(data));
-
-  // Update the URL for the "Get Link" button
-  document.getElementById("getLinkLink").href = api.getViewLink(binText);
-  console.log(document.getElementById("getLinkLink"))
 
   // Update the download link
   document.getElementById("downloadFile").href = `data:text/plain,${binText}`
