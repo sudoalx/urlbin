@@ -3,6 +3,8 @@ const app = express()
 app.set('view engine', 'ejs')
 app.use(express.static("public"))
 
+app.locals.langs = require("./public/json/languages.json")
+
 app.get('/about', (req, res) => {
     const code = `# Welcome to UrlBin
 Type your text here. You can type code and you'll 
