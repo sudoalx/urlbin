@@ -1,26 +1,23 @@
-<div class="pane">
+<nav class="pane">
     <div class="logo">
         <a href="/">
-            <h1>UrlBin</h1>
+            <img src="/icons/logo.png" alt="">
         </a>
     </div>
-    <select name="Links" class="select-css" id="linkType">
-        <optgroup label="Select link mode">
-            <option value="full" selected>Full Link</option>
-            <option value="short">Short Link</option>
-        </optgroup>
-    </select><br>
     <div class="buttons">
-        <a title="Create a new bin" class="button" href="/new">
+        <a title="Create a new bin" href="/new">
             <i class="fas fa-plus"></i>
         </a>
-        <a title="Download bin" id="downloadFile" onclick="downloadBIN()" href="" target="_blank" download="export.txt" class="button">
+        <a title="Download bin" id="downloadFile" onclick="downloadBIN()" href="" target="_blank" download="export.txt">
             <i class="fas fa-download"></i>
         </a>
-        <a title="Copy link" id="copyLink" onclick="copyURL()" class="button">
+        <a title="Copy link" id="copyLink" onclick="copyURL()">
             <i class="fas fa-link"></i>
+        </a>
+        <a id="duplicate" onclick="duplicate()">
+            <i class="fas fa-copy"></i>
         </a>
         <!-- The actual snackbar -->
     </div>
-</div>
+</nav>
 <div id="snackbar"></div>
