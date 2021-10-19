@@ -1,18 +1,14 @@
 function copyURL() {
-    var option = document.getElementById("linkType").value
     var link = window.location.host + `/#` + window.location.hash.slice(1);
     console.log(link)
-    if (option == "full") {
-        navigator.clipboard.writeText(link)
-        var text = "Link copied to clipboard!"
-        snackbar(text)
-    } else if (option == "short") {
-        shortLink = "http://tinyurl.com/create.php?url=" + link
-        console.log(shortLink)
-        //window.open(link)
-        var text = "Click <a href=" + shortLink + ' target="_blank">here</a>' + " to generate a shortlink."
-        snackbar(text)
-    }
+    navigator.clipboard.writeText(link)
+    var text = "Link copied to clipboard!"
+    snackbar(text)
+}
+function duplicate() {
+    var link = window.location.host + `/new#` + window.location.hash.slice(1);
+    console.log(link)
+    window.open(link);
 }
 function downloadBIN() {
     snackbar("Downloading...")
