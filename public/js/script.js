@@ -1,6 +1,7 @@
 function copyURL() {
     var option = document.getElementById("linkType").value
-    var link = window.location.protocol + window.location.hostname + ((location.port != '') ? ":" + location.port : "") + `/#` + window.location.hash.slice(1);
+    var link = window.location.href + `/#` + window.location.hash.slice(1);
+    console.log(link)
     if (option == "full") {
         navigator.clipboard.writeText(link)
         var text = "Link copied to clipboard!"
