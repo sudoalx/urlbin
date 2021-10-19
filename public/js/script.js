@@ -1,6 +1,6 @@
 function copyURL() {
     var option = document.getElementById("linkType").value
-    var link = window.location.href + `/#` + window.location.hash.slice(1);
+    var link = window.location.host + `/#` + window.location.hash.slice(1);
     console.log(link)
     if (option == "full") {
         navigator.clipboard.writeText(link)
