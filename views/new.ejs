@@ -22,14 +22,31 @@
         <div class="line-numbers">
             &gt;
         </div>
-        <textarea onkeyup="update()" id="new-code" name="value"><%= locals.pageData %></textarea>
+        <textarea onkeyup="update()" id="new-code" name="value"></textarea>
     </div>
 
 
 
         <script>
             autosize(document.querySelectorAll('textarea'));
-            window.addEventListener('DOMContentLoaded', update());
+            window.addEventListener('DOMContentLoaded', () => {
+                if (window.location.hash) {
+                    // Try to get page data from the URL if possible
+                    var hash = window.location.hash.slice(1);
+                    var data = b64.decode(hash);
+                    var urlDataObject = JSON.parse(data).code
+                    try {
+                    var api = apiVersions[urlDataObject.version];
+                    var display = document.getElementById('new-code')
+                    display.value = urlDataObject;
+                    } catch (err) {
+                    console.log("error while getting data")
+                    }
+                } else {
+                    // Otherwise redirect to the editor
+                    window.location.replace("/about");
+                }
+            });
         </script>
 </body>
 
