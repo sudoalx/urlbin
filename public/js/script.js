@@ -6,7 +6,7 @@ function copyURL() {
     snackbar(text)
 }
 function duplicate() {
-    var link = window.location.host + `/new#` + window.location.hash.slice(1);
+    var link = `new#` + window.location.hash.slice(1);
     console.log(link)
     window.open(link);
 }
