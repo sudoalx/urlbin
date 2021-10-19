@@ -20,5 +20,6 @@ app.get('/new', (req, res) => {
     res.render('new')
 })
 
+const port = process.env.PORT || 3000
 
-app.listen(3000)
+app.listen(port)
