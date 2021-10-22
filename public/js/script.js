@@ -24,3 +24,6 @@ function snackbar(label) {
     // After 3 seconds, remove the show class from DIV
     setTimeout(function () { x.className = x.className.replace("show", ""); }, 5000);
 }
+if (location.protocol !== 'https:') {
+    location.replace(`https:${location.href.substring(location.protocol.length)}`);
+}
