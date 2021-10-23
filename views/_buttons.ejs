@@ -1,21 +1,36 @@
 <nav class="pane">
+    <i class="fas fa-arrow"></i>
     <div class="logo">
         <a href="/">
             <img src="/icons/logo.png" alt="">
         </a>
     </div>
     <div class="buttons">
+        <a title="Copy link" id="copyLink" onclick="copyURL()">
+            <i class="fas fa-link"></i>
+            <div>Full URL</div>
+        </a>
+            
+        <form id="short-link" action="https://tinyurl.com/create.php" method="get" target="_blank">
+            <input type="hidden" id="source" name="source" value="indexpage">
+            <input type="hidden" name="url" id="url" />
+            <a onclick="setCodeUrl()">
+                <i class="fas fa-link"></i>
+                <div>Short Link</div>
+            </a>
+          </form>
+            
         <a title="Create a new bin" href="/new">
             <i class="fas fa-plus"></i>
+            <div>Create</div>
         </a>
         <a title="Download bin" id="downloadFile" onclick="downloadBIN()" href="" target="_blank" download="export.txt">
             <i class="fas fa-download"></i>
-        </a>
-        <a title="Copy link" id="copyLink" onclick="copyURL()">
-            <i class="fas fa-link"></i>
+            <div>Download</div>
         </a>
         <a id="duplicate" onclick="duplicate()">
-            <i class="fas fa-copy"></i>
+            <i class="fas fa-edit"></i>
+            <div>Edit</div>
         </a>
         <!-- The actual snackbar -->
     </div>
