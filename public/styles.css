@@ -5,6 +5,7 @@
 }
 * {
   scrollbar-width: thin;
+  scroll-behavior: smooth;
 }
 /* Track */
 * ::-webkit-scrollbar-track {
@@ -60,31 +61,31 @@ a:active {
 .open-close {
   font-size: 25px;
   position: relative;
-  background-color: #01222b;
   border-radius: 5px;
   cursor: pointer;
-  width: 70px;
+  width: 100%;
 }
 .hide {
-  transform: translateY(90%);
+  transform: translateY(80%);
+  background-color: #01222b42;
 }
 .pane {
   bottom: 0;
   right: 0;
   position: fixed;
-  height: 10rem;
+  height: 15rem;
   min-width: 20rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 5px;
+  padding: 0 5px;
   color: #fff;
   text-align: center;
-  background-color: #01222b;
   transition: ease-in 0.5s;
 }
 .logo {
+  margin-top: 20px;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -102,6 +103,9 @@ a:active {
   aspect-ratio: 1/1;
   align-items: center;
   transition: ease 0.5s;
+}
+.pane:hover {
+  background-color: #01222b;
 }
 .pane a:hover {
   background-color: #002b36;
