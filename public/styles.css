@@ -57,7 +57,17 @@ a:active {
   font-family: monospace;
   text-align: end;
 }
-
+.open-close {
+  font-size: 25px;
+  position: relative;
+  background-color: #01222b;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 70px;
+}
+.hide {
+  transform: translateY(90%);
+}
 .pane {
   bottom: 0;
   right: 0;
@@ -68,10 +78,11 @@ a:active {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 2rem;
+  padding: 5px;
   color: #fff;
   text-align: center;
   background-color: #01222b;
+  transition: ease-in 0.5s;
 }
 .logo {
   display: flex;
@@ -213,6 +224,7 @@ button {
 
 @media only screen and (max-width:600px) {
   .pane{
-    width: 90vw;
+    width: 100vw;
+    padding: 5px 2px;
   }
 }
