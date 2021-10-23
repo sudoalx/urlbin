@@ -10,11 +10,11 @@
     return plainCode.replace(/&/g, "&amp;").replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
   }
   if (window.location.hash) {
-    // Try to get page data from the URL if possible
-    var hash = window.location.hash.slice(1);
-    var data = b64.decode(hash);
-    var urlDataObject = JSON.parse(data).code
     try {
+      // Try to get page data from the URL if possible
+      var hash = window.location.hash.slice(1);
+      var data = b64.decode(hash);
+      var urlDataObject = JSON.parse(data).code
       var api = apiVersions[urlDataObject.version];
       var display = document.getElementById('code-display')
       display.innerHTML = toUtf(urlDataObject)
@@ -24,6 +24,9 @@
           document.getElementById('numbers').innerHTML += numbers
       }
     } catch (err) {
+      var display = document.getElementById('code-display')
+      display.innerHTML=`Error getting data from link.\nThe link is broken or couldn't be decoded`;
+      throw "Error while getting data from link"
       console.log("error while getting data")
     }
   } else {
