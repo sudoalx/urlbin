@@ -28,21 +28,23 @@
 
 
         <script>
-            autosize(document.querySelectorAll('textarea'));
             window.addEventListener('DOMContentLoaded', () => {
                 if (window.location.hash) {
                     // Try to get page data from the URL if possible
-                    var hash = window.location.hash.slice(1);
-                    var data = b64.decode(hash);
-                    var urlDataObject = JSON.parse(data).code
                     try {
-                    var api = apiVersions[urlDataObject.version];
-                    var display = document.getElementById('new-code')
-                    display.value = urlDataObject;
+                        var hash = window.location.hash.slice(1);
+                        var data = b64.decode(hash);
+                        var urlDataObject = JSON.parse(data).code;
+                        var api = apiVersions[urlDataObject.version];
+                        var display = document.getElementById('new-code')
+                        display.value = urlDataObject;
                     } catch (err) {
-                    console.log("error while getting data")
+                        var display = document.getElementById('new-code');
+                        display.value="Error getting data from link\nLink is broken or couldn't be decoded\nStart typing here to share more bins";
+                        throw "Error while getting data from link";
                     }
                 }
+                autosize(document.querySelectorAll('textarea'));
             });
         </script>
 </body>
