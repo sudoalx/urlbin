@@ -1,3 +1,7 @@
+function setCodeUrl() {
+    document.getElementById("short-link").submit();
+    document.getElementById("url").value = window.location.href;
+}
 function copyURL() {
     var link = window.location.host + `/#` + window.location.hash.slice(1);
     console.log(link)
