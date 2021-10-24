@@ -2,10 +2,12 @@ if (location.protocol !== 'https:') {
     location.replace(`https:${location.href.substring(location.protocol.length)}`);
 }
 const toggle = () =>{
-    const btn = document.querySelector('#close-toggle');
-    btn.addEventListener('click', () => {
+    const area = document.querySelector('#close-toggle');
+    const btn = document.querySelector('#arrow');
+    area.addEventListener('click', () => {
         const pane = document.querySelector('nav');
-        pane.classList.toggle("hide")
+        pane.classList.toggle("hide");
+        btn.classList.toggle("flip");
     });
 }
 function setCodeUrl() {
