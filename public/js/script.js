@@ -1,7 +1,9 @@
+if (location.protocol !== 'https:') {
+    location.replace(`https:${location.href.substring(location.protocol.length)}`);
+}
 const toggle = () =>{
     const btn = document.querySelector('#close-toggle');
     btn.addEventListener('click', () => {
-        console.log("clicked")
         const pane = document.querySelector('nav');
         pane.classList.toggle("hide")
     });
@@ -12,7 +14,6 @@ function setCodeUrl() {
 }
 function copyURL() {
     var link = window.location.host + `/#` + window.location.hash.slice(1);
-    console.log(link)
     navigator.clipboard.writeText(link)
     var text = "Link copied to clipboard!"
     snackbar(text)
@@ -35,9 +36,6 @@ function snackbar(label) {
 
     // After 3 seconds, remove the show class from DIV
     setTimeout(function () { x.className = x.className.replace("show", ""); }, 5000);
-}
-if (location.protocol !== 'https:') {
-    location.replace(`https:${location.href.substring(location.protocol.length)}`);
 }
 document.addEventListener("DOMContentLoaded", function() {
     toggle()
