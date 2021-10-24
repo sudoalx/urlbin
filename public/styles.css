@@ -60,12 +60,18 @@ a:active {
   text-align: end;
 }
 .open-close {
-  font-size: 25px;
+  font-size: 2.5rem;
   position: relative;
   border-radius: 5px;
   cursor: pointer;
   width: 100%;
   height: 100%;
+}
+.open-close i {
+  transition: ease-in 0.5s;
+}
+.flip {
+  transform: rotate(180deg);
 }
 .hide {
   transform: translateY(80%);
